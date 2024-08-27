@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
+    <style>
+        .navbar-brand img {
+      width: 70px; 
+      height: 70px; 
+      border-radius: 50%; 
+      }
+      .navbar-profil img {
+        width: 45px; 
+        height: 45px; 
+        border-radius: 50%;
+      }
+      .navbar {
+        position: fixed;
+        transition: transform 0.5s ease;
+      }
+      .collapse.navbar-collapse ul.navbar-nav li {
+         padding:25px; 
+      }
+      .nav-item a{
+        color: black !important;
+      }
+      .nav-item.active a {
+        color: black !important;
+      }
+      .text-container{
+        margin-top: 8%;
+        color: var(--wire-font-color, #4D4D4D);
+        font-family: Poppins;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+      }
+      .name{
+        color: #606367;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+       }
+       .profil{
+        width: 261px;
+        height: 266px;
+        flex-shrink: 0;
+        border-radius: 360px;
+        border: 1px solid #8D8D8D;
+        background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+       }
+       .first-name, .email, .last-name{
+        color: #606367;
+        font-family: Poppins;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-top: 10px;
+       }
+       .email{
+        margin-left: -15px;
+        margin-top: 10px;
+       }
+       .input{
+        border-radius: 5px;
+        border: 2.5px solid #F7CDD8;
+        width: 300px;
+        height: 35px;
+        flex-shrink: 0;
+       }
+       .input-email{
+        border-radius: 5px;
+        border: 2.5px solid #F7CDD8;
+        width: 300px;
+        height: 35px;
+        flex-shrink: 0;
+        width: 778px;
+        margin-left: -15px;
+       }
+       .button-confirm{
+        color: #FFF;
+        text-align: center;
+        font-family: Poppins;
+        font-size: 23px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 10px;
+        background: #F7CDD8;
+        width: 240px;
+        height: 55px;
+        flex-shrink: 0;
+        margin-top: 20px;
+       }
+       .confirm{
+        text-decoration: none;
+        color: #4D4D4D;
+        text-align: center;
+        }
+        .footer{
+      background-color: #f39fad;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 250px;
+    }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .footer-logo img {
+      width: 46px;
+      height: 42px;
+      margin-top: 35%;
+      margin-left: 27px;
+    }
+    .but-footer{
+      text-align: center; 
+      color: rgb(255, 255, 255);
+      margin-top: 40px;
+    }
+    .edit{
+      color: var(--wire-font-color, #4D4D4D);
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+     
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar fixed-top navbar-expand lg navbar-dark p-md-3">
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <img src="Assets/logo.jpg" alt="Logo SnailBee" class="rounded-logo">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto"> 
+              <li class="nav-item"><a href="tubes.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
+              <li class="nav-item"><a href="sale.html" class="nav-link">Sale</a></li>
+              <li class="nav-item"><a href="AboutUs.html" class="nav-link">About Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <a href="profile.html" class="navbar-profil">
+              <img src="Assets/profil.jpg" alt="profil" class="rounded-profil">
+            </a>
+          </div>
+        </div>
+      </nav>
+
+          <div class="container-fluid">
+            
+          </div>
+
+        <div class="container-fluid" >
+          <div class="row justify-content-center" style="margin-top: 200px;">
+            
+            <div class="col-4" style=" text-align: center;">
+              <h1 class="edit" style="margin-bottom: 30px;">Edit Profile</h1>
+              <img class="profil" src="Assets/profil.jpg" alt="">
+            </div>
+            <div class="col-4 ">
+              <div class="row">
+                <div class="col-6 ">
+                  <p class="first-name">First Name</p>
+                  <input class="input" type="text">
+                </div>
+                <div class="col-6 ">
+                  <p class="last-name">Last Name</p>
+                  <input class="input" type="text">
+                </div>
+              </div>
+              <div class=" col-6 ">
+                <p class="email">Email</p>
+                <input class="input-email" type="text">
+              </div>
+              <div class=" col-6 ">
+                <p class="email">Contacts Number</p>
+                <input class="input-email" type="number">
+              </div>
+              <div class=" col-6 ">
+                <p class="email">Address</p>
+                <input class="input-email" type="text">
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <p class="first-name">City</p>
+                  <input class="input" type="text">
+                </div>
+                <div class="col-6">
+                  <p class="last-name">State</p>
+                  <input class="input" type="text">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <p class="first-name">Postcode</p>
+                  <input class="input" type="number">
+                </div>
+                <div class="col-6">
+                  <p class="last-name">Country</p>
+                  <input class="input" type="text">
+                </div>
+              </div>
+              <div class="button-confirm">
+                <a class="confirm" href="#">Confirm</a>
+              </div>
+            </div>
+            <div class="col-1 "></div>
+          </div>
+        </div>
+
+        <footer>
+          <div class="footer" style="flex-direction: column;">
+            <div class="footer-logo">
+              <img src="Assets/instagram.png" alt="ig" href="#">
+              <img src="Assets/Vector.png" alt="X" href="#">
+              <img src="Assets/youtube.png" alt="yt" href="#">
+              <img src="Assets/email.png" alt="email" href="#">
+            </div>
+            <div class="but-footer">
+              <p>© 2023, SnailBee Powered by Figma - Refund Policy - Privacy Policy - Terms of Service - Shipping Policy - Contact Information</p>
+            </div>
+          </div>
+        </footer>
+      
+</body>
+</html>

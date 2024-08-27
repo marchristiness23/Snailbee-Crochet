@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Snailbee</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">    
+
+    <style>
+    .navbar-brand img {
+      width: 70px; 
+      height: 70px; 
+      border-radius: 50%; 
+      }
+      .navbar-profil img {
+        width: 45px; 
+        height: 45px; 
+        border-radius: 50%;
+      }
+      .navbar {
+        position: fixed;
+        transition: transform 0.5s ease;
+        display: flex;
+        justify-content: center;
+        
+      }
+      .collapse.navbar-collapse ul.navbar-nav li {
+         padding:25px; 
+         
+      }
+      .nav-item a{
+        color: black !important;
+      }
+      .nav-item.active a {
+        color: black !important;
+      }
+      .nav-item.active {
+        background-color: transparent;
+      }
+      .row{
+        margin: auto;
+        margin-top: 25px;
+      }
+      .kotak{
+        border: 2px solid #8d8d8d;
+        width: 250px;
+        height: 440px;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+      .kotak:hover{
+        outline: .1rem solid #444141;
+        outline-offset: 0;
+      }
+      .text{
+        margin-top: 18%;
+        color: #4D4D4D ;
+        font-weight: bold;
+        font-size: x-large;
+      }
+      .text-1{
+        margin-top: 10%;
+        color: #4D4D4D ;
+        font-weight: bold;
+        font-size: x-large;
+        text-align: center;
+      }
+      .star{
+        padding-left: 8px;
+        padding-top: 8px;
+        padding-bottom: 1px;
+        height: 38px;
+        width: 43px;
+      }
+      .fire{
+        padding-left: 8px;
+        padding-top: 8px;
+        height: 43px;
+        width: 40px;
+        
+      }
+      .chick{
+        margin: auto;
+      }
+      .product {
+        position: relative; 
+      }
+      .product-img{
+        width: 82%;
+        height: auto;
+        margin-top: 18px;
+        margin-right: 20px;
+        margin-left: 20px;
+        z-index: 1;
+      }
+      .product:hover{
+        transition: scale(.9);
+
+      }
+      .h2{
+        font-style: normal;
+        font-size: 16px;
+        font-weight: bold;
+        margin-left: 20px;
+        margin-top:5px;
+        color: #4D4D4D;
+      }
+      .p{
+        font-size: 10px;
+        margin-left: 20px;
+        margin-top: 5px;
+        margin-right: 10px;
+      }
+      .hr{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border: 1px solid #8D8D8D;
+      }
+      .harga-product{
+        padding-left: 10px;
+        padding-bottom: 10px;
+        color: #14AE5C;
+        font-size: 13px;
+        font-weight: bold;
+        margin-top: 8px;
+        cursor: context-menu;
+      }
+      .harga{
+        margin-top: -19px;
+      }
+      .footer{
+      background-color: #F7CDD8;;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 250px;
+    }
+    .footer-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .footer-logo img {
+      width: 46px;
+      height: 42px;
+      margin-top: 35%;
+      margin-left: 27px;
+    }
+    .but-footer{
+      text-align: center; 
+      color: rgb(255, 255, 255);
+      margin-top: 40px;
+    }
+     .to-cart{
+      z-index: 2;
+      width: 20px;
+      height: 30px;
+      cursor: pointer;
+     }
+     .product-preview{
+      position: fixed;
+      top: 0; left: 0;
+      min-height: 100vh;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     }
+      .preview{
+      display: none;
+      padding: 2rem;
+      text-align: center;
+      background: #fff;
+      position: relative;
+      margin: 2rem;
+      width: 40rem;
+     }
+     .product-preview .preview img{
+      height: 30rem;
+     }
+     .product-preview .preview.active{
+      display: inline-block;
+     }
+    </style>
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand lg navbar-dark p-md-3">
+        <div class="container">
+          <a href="#" class="navbar-brand">
+            <img src="Assets/logo.jpg" alt="Logo SnailBee" class="rounded-logo">
+          </a>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto start-50" > 
+              <li class="nav-item"><a href="tubes.html" class="nav-link text-black">Home</a></li>
+              <li class="nav-item"><a href="shop.html" class="nav-link text-black">Shop</a></li>
+              <li class="nav-item"><a href="sale.html" class="nav-link text-black">Sale</a></li>
+              <li class="nav-item"><a href="AboutUs.html" class="nav-link text-black">About Us</a></li>
+            </ul>
+          </div>
+          
+          <div>
+            <a href="profile.html" class="navbar-profil">
+              <img src="Assets/profil.jpg" alt="profil" class="rounded-profil">
+            </a>
+          </div>
+        </div>
+      </nav>
+      
+      
+      <div class="container">
+        <div class="text">Bestseller</div>  
+        <div class="row">
+            <div class="col-3" >
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/star.png" alt="star" class="star">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/chick.png" alt="chick" class="product-img">
+                    <h2 class="h2">Chick in The Shell</h2>
+                    <p class="p">The finely crafted amigurumi "Chick in The Shell" is expertly handmade, featuring intricate details and a delightful combination of colors. Making it the perfect cuddly companion.</p> <hr class="hr">
+                  </div>
+                  
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 35.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+            </div>
+            <div class="col-3" id="">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/star.png" alt="star" class="star">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/dino.png" alt="dino" class="product-img">
+                    <h2 class="h2">Dinosour</h2>
+                    <p class="p">The intricately crafted amigurumi dinosaur is skillfully handmade with meticulous attention to detail. Using a combination of soft and vibrant yarn, this adorable creation showcases a playful. </p> <hr class="hr">
+                  </div>
+
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 200.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="col-3">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/star.png" alt="star" class="star">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/ducky.png" alt="ducky" class="product-img">
+                    <h2 class="h2">Purple Ducky</h2>
+                    <p class="p">The meticulously crafted "Purple Ducky" amigurumi is skillfully handmade with attention to detail, featuring soft purple hues and charming stitching.</p> <hr class="hr">
+                  </div>
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 500.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+
+            <div class="col-3">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/star.png" alt="star" class="star">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/turtle.png" alt="turtle" class="product-img">
+                    <h2 class="h2">Blue Turtle</h2>
+                    <p class="p">The meticulously crafted amigurumi blue turtle is expertly handmade, showcasing intricate details and a soothing shade of blue in its soft yarn construction.</p> <hr class="hr">
+                  </div>
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 89.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+          </div>
+          
+          </div>
+    </div> 
+    
+    <!-- preview --> <!-- preview --> <!-- preview --> <!-- preview -->
+    <!-- <div class="product-preview">
+      <div class="preview" data-target="p-1">
+          <img src="Assets/chick.png" alt="">
+          <h3>Chick in The Shell</h3>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipsicing elit. Consequatur, dolorem.</p>
+          <div class="price">Rp 35.000</div>
+          <div class="buttons">
+            <a href="#" class="cart">buy now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="product-preview">
+      <div class="preview" data-target="p-2">
+          <img src="Assets/dino.png" alt="">
+          <h3>Dinosour</h3>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipsicing elit. Consequatur, dolorem.</p>
+          <div class="price">Rp 200.000</div>
+          <div class="buttons">
+            <a href="#" class="cart">buy now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="product-preview">
+      <div class="preview" data-target="p-3">
+          <img src="Assets/ducky.png" alt="">
+          <h3>Purple Ducky</h3>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipsicing elit. Consequatur, dolorem.</p>
+          <div class="price">Rp 500.000</div>
+          <div class="buttons">
+            <a href="#" class="cart">buy now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+      </div>
+    </div>
+
+    <div class="product-preview">
+      <div class="preview" data-target="p-4">
+          <img src="Assets/turtle.png" alt="">
+          <h3>Blue Turtle</h3>
+          <div class="starts">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <span>( 250 )</span>
+          </div>
+          <p>Lorem ipsum dolor sit amet consectetur adipsicing elit. Consequatur, dolorem.</p>
+          <div class="price">Rp 89.000</div>
+          <div class="buttons">
+            <a href="#" class="cart">buy now</a>
+            <a href="#" class="cart">add to cart</a>
+          </div>
+      </div>
+    </div> -->
+
+    <!--end-preview --> <!--end-preview --> <!--end-preview --> <!--end-preview -->
+
+    <div class="container">
+      <div class="text-1">SnailBee Katalog</div>
+      <div class="row">
+        <div class="col-6">
+            <p>Filter: Product Type </p>
+        </div> 
+        <div class="col-6 d-flex justify-content-end">
+            <p>20 Products</p>
+        </div>
+      </div> 
+    </div>
+
+    <div class="container">  
+      <div class="row">
+          <div class="col-3">
+              <div class="kotak">
+                <div class="star">
+                  <img src="Assets/star.png" alt="star" class="star">
+                </div>
+                <div class="product">
+                  <img src="Assets/Carrots Bunny.png" alt="carrot bunny" class="product-img">
+                  <h2 class="h2">Carrot Bunny</h2>
+                  <p class="p">Floppy ears and huggable size, it's the perfect companion for children and adults alike. Whether as a cuddly friend or a charming decor piece.</p> <hr class="hr">
+                </div>
+                <div class="harga">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="harga-product">IDR 150.000</h3>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                      <img class="to-cart" src="Assets/to-cart.png" alt="">
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+          </div>
+          <div class="col-3" id="">
+              <div class="kotak">
+                <div class="star">
+                  <img src="Assets/FIRE.png" alt="star" class="fire">
+                </div>
+                <div class="product">
+                  <img src="Assets/Pink Turtle 1.png" alt="pinkturtle" class="product-img">
+                  <h2 class="h2">Pink Turtle</h2>
+                  <p class="p">The handcrafted amigurumi turtle is meticulously crafted with the utmost care, using soft, rosy pink yarn that adds a touch of warmth and charm. </p> <hr class="hr">
+                </div>
+                <div class="harga">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="harga-product">IDR 99.000</h3>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                      <img class="to-cart" src="Assets/to-cart.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+              <div class="kotak">
+                <div class="star">
+                  <img src="Assets/star.png" alt="star" class="star">
+                </div>
+                <div class="product">
+                  <img src="Assets/Pink Cow 1.png" alt="cow" class="product-img">
+                  <h2 class="h2">Pink Cow</h2>
+                  <p class="p">Adorable and huggable plush toy is lovingly handcrafted in soft shades of pink and white, complete with charming details. Perfect for kids and the young at heart.</p> <hr class="hr">
+                </div>
+                <div class="harga">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="harga-product">IDR 80.000</h3>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                      <img class="to-cart" src="Assets/to-cart.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+              <div class="kotak">
+                <div class="star">
+                  <img src="Assets/star.png" alt="star" class="star">
+                </div>
+                <div class="product">
+                  <img src="Assets/BunnyCoo 1.png" alt="bunny" class="product-img">
+                  <h2 class="h2">BunnyCoo</h2>
+                  <p class="p">Embrace the magic of BunnyCoo and experience the joy of a handmade wonder that brings warmth and comfort to your world bunnies are not just adorable but also wonderfully soft</p> <hr class="hr">
+                </div>
+                <div class="harga">
+                  <div class="row">
+                    <div class="col-6">
+                      <h3 class="harga-product">IDR 120.000</h3>
+                    </div>
+                    <div class="col-6 d-flex justify-content-end">
+                      <img class="to-cart" src="Assets/to-cart.png" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        
+        </div>
+      </div>  
+      <div class="container">  
+        <div class="row">
+            <div class="col-3">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/FIRE.png" alt="star" class="fire">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/Brown Bunny 1.png" alt="brown bunny" class="product-img">
+                    <h2 class="h2">Brown Bunnyy</h2>
+                    <p class="p">Floppy ears and huggable size, it's the perfect companion for children and adults alike. Whether as a cuddly friend or a charming decor piece.</p> <hr class="hr">
+                  </div>
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 120.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+            </div>
+            <div class="col-3" id="">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/star.png" alt="star" class="star">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/Bobba Milk 1.png" alt="bobba" class="product-img">
+                    <h2 class="h2">Bobba Milk</h2>
+                    <p class="p">velvety softness and whimsical design make it the perfect companion for anyone with a taste for cuteness Bobba Milk will add a touch of sweetness to your life. </p> <hr class="hr">
+                  </div>
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 99.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/star.png" alt="star" class="star">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/Beanie head 1.png" alt="beanie" class="product-img">
+                    <h2 class="h2">2 Tone Beanie</h2>
+                    <p class="p">Made from soft, high-quality yarn, it's a must-have accessory that effortlessly elevates your winter wardrobe. Whether you're hitting the slopes or strolling through the city.</p> <hr class="hr">
+                  </div>
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 180.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="kotak">
+                  <div class="star">
+                    <img src="Assets/FIRE.png" alt="star" class="fire">
+                  </div>
+                  <div class="product">
+                    <img src="Assets/Flower Beanie 1.png" alt="bunny" class="product-img">
+                    <h2 class="h2">Flower Green Beanie</h2>
+                    <p class="p">The lush, leafy green color adds a touch of nature-inspired charm, while the delicate crochet flower embellishment offers a whimsical and feminine touch.</p> <hr class="hr">
+                  </div>
+                  <div class="harga">
+                    <div class="row">
+                      <div class="col-6">
+                        <h3 class="harga-product">IDR 180.000</h3>
+                      </div>
+                      <div class="col-6 d-flex justify-content-end">
+                        <img class="to-cart" src="Assets/to-cart.png" alt="">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div> 
+          </div>
+    </div> 
+    <div style="margin-top: 6%;" class="page">
+      <div class="row d-flex justify-content-center ">
+        <ul><a href="#" class="text-dark">1</a></ul>
+        <ul><a href="#" class="text-dark">2</a></ul>
+        <ul><a href="#" class="text-dark">3</a></ul>
+      </div>
+    </div> 
+
+
+    <footer>
+      <div class="footer" style="flex-direction: column;">
+        <div class="footer-logo">
+          <img src="Assets/instagram.png" alt="ig" href="#">
+          <img src="Assets/Vector.png" alt="X" href="#">
+          <img src="Assets/youtube.png" alt="yt" href="#">
+          <img src="Assets/email.png" alt="email" href="#">
+        </div>
+        <div class="but-footer">
+          <p>© 2023, SnailBee Powered by Figma - Refund Policy - Privacy Policy - Terms of Service - Shipping Policy - Contact Information</p>
+        </div>
+      </div>
+    </footer>
+      
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
